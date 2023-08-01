@@ -1,0 +1,11 @@
+linux commands:
+
+Touch	#creates a file
+	touch index.html	#creates a html file named index
+
+cat 	#displays the contents of a file
+	cat notes.txt	#shows whats written in the file
+
+vi	#edit a file
+	vi notes.txt	#edits the file
+	ESC :wq! #exits and saves changes

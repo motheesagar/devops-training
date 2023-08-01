@@ -1,0 +1,90 @@
+Ansible:
+
+Iaac = Infrastructure as a code
+
+Cloudformation and Ansible are Iaac
+
+Ansible needs ythhon to be installed in machhine
+
+3 things an Iaac should do:
+
+Provisioning infta -> Terraform can be ued
+Configuration management -> Ansible
+Server temlate -> Docker
+
+Ansible is not complete Iaac as not all can be achieved with ansible as Ansible has restrictions.
+
+Uually terraform is used to create the code from scratch and Ansible is used to manage the infr created with Terraform.
+
+Ansible and Salt:
+>agentless (Need not be installed in slave)
+>Push based
+
+Chef and Puppet:
+>agent based (Need to be installed in slave machine)
+>pull based
+
+
+Ansible uses Master Slave architecture.
+
+Important files:
+
+Main file of Ansible is called "playbook".
+
+All tasks are assigned in the "playbook".
+
+Public IP of the slave machine is entered in the playbook.
+
+"Control machine" is the master machine or brain of operation.
+
+"Inventory file" or "Hosts" file is where we give IP address to slave machines.
+
+"Module" is a library where we install softwares
+
+Communication between Ansible and Slave machine is SSH protocol.
+
+
+Install Ansible in Master:
+
+sudo su
+
+sudo yum install python -y
+
+python --version #check if python is installed
+
+yum update -y
+
+sudo yum install wget -y #install wget to download files from web
+
+wget https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm
+	# rpm -> manages rpm packages
+
+sudo rpm -ivh epel-release-7-14.noarch.rpm
+	#-i install package
+	#-v verbose, give real time status update
+	#-h progress of installation
+
+sudo yum-config-manage --enable epel
+
+sudo yum install ansible -y
+
+ansible --version	#check if successfully instlalled
+
+cat /etc/passwd
+	#note ansible user is not present
+
+sudo useradd ansible
+
+sudo passwd ansible
+
+SET PASSWORD
+
+cat /etc/passwd
+	@note ansible user is present
+
+cd /etc/ansible
+
+ls
+	#note hosts file is visible
+
+sudo vi hosts
